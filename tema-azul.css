@@ -1,0 +1,125 @@
+/* Tema azul marino para unificar la portada y mejorar el contraste. */
+:root { color-scheme: dark; }
+
+html, body {
+  min-height: 100%;
+  color: #e9f1f8 !important;
+  background: #071a2b !important;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 14% 7%, rgba(31, 92, 139, .3), transparent 34%),
+    radial-gradient(ellipse at 92% 37%, rgba(15, 111, 117, .2), transparent 31%),
+    linear-gradient(150deg, #071a2b 0%, #0a2137 55%, #081a2a 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Barra superior oscura con enlaces claros. */
+body > header, .site-header, header.navbar, nav.navbar, .navbar {
+  color: #f3f7fb !important;
+  background: rgba(7, 24, 41, .97) !important;
+  border-color: rgba(174, 202, 224, .12) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+
+.navbar :is(a, .navbar-brand, .nav-link),
+body > header :is(a, .brand, .nav-link),
+.site-header :is(a, .brand, .nav-link) {
+  color: #e7f0f7 !important;
+}
+
+.nav-insignia-item { display: flex; align-items: center; }
+.nav-insignia-link {
+  display: inline-grid;
+  width: 54px;
+  height: 58px;
+  place-items: center;
+  margin: 0 .65rem;
+  padding: 3px;
+  border: 1px solid rgba(242, 212, 145, .65);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(247, 224, 173, .16), rgba(22, 55, 79, .8));
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .25);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.nav-insignia-link:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, .32); }
+.nav-insignia-link img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* Convierte la caja blanca principal en un panel azul con profundidad. */
+:is(.hero-card, .hero-panel, .hero-inner, .hero-content, .hero-shell,
+    .hero-layout, .home-hero, .inicio-hero, .portada-hero, .hero-copy-container,
+    .hero-container, .hero > .container, .hero .container,
+    main > section:first-child > .container,
+    main > section:first-child > :first-child) {
+  color: #f0f6fb !important;
+  background: linear-gradient(135deg, #102d49 0%, #0d2944 60%, #103b50 100%) !important;
+  border: 1px solid rgba(177, 207, 231, .16) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .26) !important;
+}
+
+:is(.hero-card, .hero-panel, .hero-inner, .hero-content, .hero-shell,
+    .hero-layout, .home-hero, .inicio-hero, .portada-hero, .hero-copy-container,
+    .hero-container, .hero > .container, .hero .container,
+    main > section:first-child > .container,
+    main > section:first-child > :first-child) :is(h1, h2, h3, p, .eyebrow, .subtitle) {
+  color: #f0f6fb !important;
+}
+
+/* El panel ilustrativo conserva una superficie clara para que sus datos se lean. */
+:is(.preview-card, .dashboard-preview, .hero-preview, .mockup-card, .panel-academico) {
+  color: #18324b !important;
+  background: #f7faff !important;
+  border: 1px solid rgba(175, 202, 222, .55) !important;
+}
+
+:is(.preview-card, .dashboard-preview, .hero-preview, .mockup-card, .panel-academico) :is(h1, h2, h3, h4, p, span, strong, small) {
+  color: #18324b;
+}
+
+/* Títulos institucionales y tarjetas con contraste claro sobre el fondo oscuro. */
+:is(#sistema, #mision, #vision, #valores, .mvv-section, .colegio-extra,
+    main > section:not(:first-child)) :is(h1, h2, h3) {
+  color: #f1f6fb !important;
+}
+
+:is(#sistema, #mision, #vision, #valores, .mvv-section, .colegio-extra,
+    main > section:not(:first-child)) :is(p, .lead, .subtitle) {
+  color: #b8c9d8 !important;
+}
+
+:is(.mvv-card, .mission-card, .vision-card, .value-card, .principle-card,
+    .feature-card, .info-card, .colegio-card) {
+  color: #eaf2f8 !important;
+  background: linear-gradient(145deg, #163752, #102a43) !important;
+  border: 1px solid rgba(162, 197, 222, .17) !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .22) !important;
+}
+
+main > section:not(:first-child) :is(article, .card, [class*="card"]) {
+  color: #eaf2f8 !important;
+  background: linear-gradient(145deg, #163752, #102a43) !important;
+  border-color: rgba(162, 197, 222, .17) !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .22) !important;
+}
+
+main > section:not(:first-child) :is(article, .card, [class*="card"]) :is(h1, h2, h3, h4, p, span, small) {
+  color: #eaf2f8 !important;
+}
+
+:is(.mvv-card, .mission-card, .vision-card, .value-card, .principle-card,
+    .feature-card, .info-card, .colegio-card) :is(h1, h2, h3, h4) {
+  color: #f5f8fc !important;
+}
+
+:is(.mvv-card, .mission-card, .vision-card, .value-card, .principle-card,
+    .feature-card, .info-card, .colegio-card) :is(p, span, small) {
+  color: #c3d2df !important;
+}
+
+@media (max-width: 700px) {
+  .nav-insignia-link { width: 44px; height: 48px; margin: 0 .35rem; }
+  :is(.hero-card, .hero-panel, .hero-inner, .hero-content, .hero-shell,
+      .hero-layout, .home-hero, .inicio-hero, .portada-hero, .hero-copy-container,
+      main > section:first-child > :first-child) { border-radius: 20px; }
+}

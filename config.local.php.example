@@ -1,0 +1,10 @@
+<?php
+
+// Copia este archivo como config.local.php para desarrollo local.
+// config.local.php está excluido de Git.
+return [
+    "host" => "localhost",
+    "database" => "estudiantes",
+    "username" => "root",
+    "password" => "",
+];

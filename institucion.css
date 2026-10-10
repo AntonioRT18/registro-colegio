@@ -1,0 +1,127 @@
+.colegio-extra {
+  max-width: 1180px;
+  margin: clamp(3rem, 8vw, 6rem) auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  color: #e8f0f7;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: #071523 !important;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 8% 16%, rgba(24, 103, 139, .28), transparent 32%),
+    radial-gradient(ellipse at 90% 53%, rgba(18, 111, 101, .2), transparent 31%),
+    linear-gradient(145deg, #071523 0%, #0b2033 52%, #081824 100%) !important;
+  background-attachment: fixed !important;
+}
+
+.colegio-kicker {
+  color: #147c82;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.colegio-heading {
+  max-width: 720px;
+  margin: .45rem 0 1rem;
+  color: #f2f7fb;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 750;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+
+.colegio-lead { max-width: 700px; color: #b5c6d5; font-size: 1.08rem; line-height: 1.8; }
+
+.colegio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+  margin-top: 2rem;
+  perspective: 1100px;
+}
+
+.colegio-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  padding: 1.65rem;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #254c78, #172f50 82%);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .2);
+  transition: transform .35s cubic-bezier(.2,.75,.25,1), box-shadow .35s ease, border-color .35s ease;
+}
+
+.colegio-card:nth-child(2) { background: linear-gradient(145deg, #176e70, #123e50 82%); }
+.colegio-card:nth-child(3) { background: linear-gradient(145deg, #615187, #302d58 82%); }
+.colegio-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: linear-gradient(#9de2d2, #f3d38c); }
+.colegio-card::after { content: ""; position: absolute; width: 170px; height: 170px; right: -85px; top: -90px; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; box-shadow: 0 0 0 18px rgba(255,255,255,.035), 0 0 0 38px rgba(255,255,255,.025); }
+.colegio-card .colegio-icon { display: grid; width: 48px; height: 48px; place-items: center; margin-bottom: 1.2rem; border: 1px solid rgba(255,255,255,.2); border-radius: 15px; color: #fff0bf; background: rgba(255,255,255,.1); font-size: 1.4rem; }
+.colegio-card h3 { margin: 0 0 .6rem; color: #fff; font-size: 1.18rem; font-weight: 750; }
+.colegio-card p { margin: 0; color: rgba(239,247,252,.8); line-height: 1.75; }
+.colegio-card.is-visible:hover { transform: translateY(-10px) scale(1.035); border-color: rgba(255,255,255,.34); box-shadow: 0 26px 52px rgba(0,0,0,.32); }
+
+.colegio-comunidad {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(120deg, #102944, #145b70 75%, #187b7c);
+  box-shadow: 0 22px 50px rgba(16, 41, 68, .16);
+}
+
+.colegio-comunidad h2 { margin: .4rem 0 .7rem; color: #fff; font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 750; }
+.colegio-comunidad p { margin: 0; color: rgba(255,255,255,.83); line-height: 1.8; }
+.colegio-sello { grid-column: 1; grid-row: 1; display: block !important; visibility: visible !important; opacity: 1 !important; justify-self: center; width: min(100%, 330px); padding: 14px; border: 1px solid rgba(247,218,153,.62); border-radius: 50%; background: radial-gradient(circle, rgba(254,228,167,.24), rgba(28,64,82,.54) 68%, rgba(8,25,39,.8)); box-shadow: 0 0 0 10px rgba(248,220,163,.055), 0 22px 44px rgba(0,0,0,.4); filter: drop-shadow(0 14px 28px rgba(0,0,0,.35)); }
+.colegio-comunidad > div { grid-column: 2; grid-row: 1; }
+
+.colegio-familias {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1.7rem 2rem;
+  border: 1px solid rgba(150, 190, 215, .16);
+  border-radius: 20px;
+  background: linear-gradient(130deg, #102a40, #102637);
+  box-shadow: 0 18px 42px rgba(0,0,0,.2);
+}
+
+.colegio-familias h2 { margin: 0 0 .35rem; color: #f2f7fb; font-size: 1.35rem; }
+.colegio-familias p { margin: 0; color: #b5c6d5; }
+.colegio-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.colegio-actions a { border-radius: 999px; font-weight: 700; }
+
+.colegio-scroll {
+  opacity: 0;
+  transform: perspective(900px) translateY(48px) scale(.9) rotateX(7deg);
+  filter: blur(5px);
+  transition: opacity .75s ease, transform .85s cubic-bezier(.16,1,.3,1), filter .75s ease;
+  will-change: opacity, transform;
+}
+.colegio-scroll.is-visible { opacity: 1; transform: perspective(900px) translateY(0) scale(1) rotateX(0); filter: blur(0); }
+
+@media (max-width: 760px) {
+  .colegio-grid { grid-template-columns: 1fr; }
+  .colegio-card { min-height: auto; }
+  .colegio-comunidad { grid-template-columns: 1fr; }
+  .colegio-comunidad > div { grid-column: 1; grid-row: 2; }
+  .colegio-sello { grid-column: 1; grid-row: 1; justify-self: start; width: 205px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colegio-card, .colegio-scroll { transition: none; }
+  .colegio-scroll { opacity: 1; transform: none; filter: none; }
+}

@@ -1,0 +1,64 @@
+/* Fondo claro azul grisáceo con superficies oscuras reservadas para navegación y énfasis. */
+html, body {
+  min-height: 100%;
+  color: #18334c !important;
+  background-color: #eaf2f8 !important;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgba(255, 255, 255, .96), transparent 36%),
+    radial-gradient(ellipse at 91% 33%, rgba(192, 225, 230, .5), transparent 31%),
+    linear-gradient(145deg, #f6f9fc 0%, #eaf2f8 56%, #e1ebf3 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Navegación y pie conservan el azul marino de la identidad visual. */
+body > header, .site-header, header.navbar, nav.navbar, .navbar {
+  color: #f3f7fb !important;
+  background: #0a1e32 !important;
+  border-color: rgba(174, 202, 224, .14) !important;
+}
+
+.texto-fondo-oscuro { color: #17334d !important; }
+.texto-fondo-oscuro:is(.section-kicker, .section-label, .eyebrow, .colegio-kicker) { color: #087d81 !important; }
+.hero-dark-surface { background: linear-gradient(135deg, #fff, #f3f7fb 72%, #e9f1f7) !important; }
+.hero-dark-surface :is(h1, h2, h3, h4, p, span, .eyebrow, .subtitle) { color: #111827 !important; }
+.hero-dark-surface .eyebrow, .hero-dark-surface .portada-kicker { color: #087d81 !important; }
+.portada-texto-negro { color: #111827 !important; }
+
+/* Las superficies oscuras mantienen texto claro. */
+.colegio-comunidad .texto-fondo-oscuro,
+.colegio-familias .texto-fondo-oscuro,
+.mision-card-destacada .texto-fondo-oscuro,
+.colegio-card .texto-fondo-oscuro,
+.site-footer .texto-fondo-oscuro { color: #f3f7fb !important; }
+
+.site-footer, .site-footer :is(p, span, small, strong) { color: #c8d6e2 !important; }
+.site-footer .site-footer__brand { color: #f5f8fb !important; }
+.site-footer .site-footer__links a { color: #d9e5ee !important; }
+.site-footer .site-footer__links a:hover { color: #77d8c4 !important; }
+
+.colegio-extra { color: #17334d !important; }
+.colegio-heading { color: #122f4a !important; }
+.colegio-lead { color: #536b80 !important; }
+.colegio-comunidad h2, .colegio-comunidad p,
+.colegio-familias h2, .colegio-familias p { color: #f3f7fb !important; }
+
+/* Contraste firme en las tarjetas Misión, Visión y Valores. */
+.tarjeta-institucional-oscura {
+  color: #f5f8fc !important;
+  background: linear-gradient(145deg, #173c5b, #102b44) !important;
+  border: 1px solid rgba(147, 190, 219, .25) !important;
+  box-shadow: 0 15px 34px rgba(19, 47, 70, .18) !important;
+}
+.tarjeta-institucional-oscura .texto-tarjeta-claro { color: #f5f8fc !important; }
+.tarjeta-institucional-oscura h2, .tarjeta-institucional-oscura h3 { color: #fff !important; }
+.tarjeta-institucional-oscura p, .tarjeta-institucional-oscura span,
+.tarjeta-institucional-oscura small, .tarjeta-institucional-oscura strong { color: #c9d9e6 !important; }
+
+/* Formulario, contenido y tablas conservan texto oscuro sobre superficies claras. */
+input, select, textarea { color: #172b3d; }
+input::placeholder, textarea::placeholder { color: #6b7d8d; opacity: 1; }
+table { color: #24384b; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+}

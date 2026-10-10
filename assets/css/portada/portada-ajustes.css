@@ -1,0 +1,248 @@
+/* Ajustes aislados: color por sección y foto transparente solo en la portada. */
+.portada-con-foto {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+  /* La foto se agrega como una capa <img> desde portada-textos.js. */
+  background-image: none !important;
+  background-color: rgba(248, 251, 255, .74) !important;
+}
+
+.portada-con-foto .portada-foto-layer {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0 !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  opacity: .27;
+  pointer-events: none;
+}
+
+.portada-con-foto::before {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.portada-con-foto > *:not(.portada-foto-layer) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cada pieza de texto tiene una regla específica que se puede editar sin
+   alterar los títulos, descripciones o tarjetas de otras secciones. */
+.portada-etiqueta { color: #087d81 !important; }
+.portada-titulo { color: #10243d !important; }
+.portada-descripcion { color: #344b63 !important; }
+
+.seccion-sistema .seccion-titulo { color: #10243d !important; }
+.seccion-sistema .seccion-descripcion { color: #52657a !important; }
+.seccion-comunidad .seccion-titulo { color: #10243d !important; }
+.seccion-comunidad .seccion-descripcion { color: #52657a !important; }
+.seccion-mision .seccion-titulo { color: #f4c96a !important; }
+.seccion-mision .seccion-descripcion { color: #f3f6fb !important; }
+.seccion-vision .seccion-titulo { color: #8de0d2 !important; }
+.seccion-vision .seccion-descripcion { color: #f3f6fb !important; }
+.seccion-valores .seccion-titulo { color: #c9d8ff !important; }
+.seccion-valores .seccion-descripcion { color: #f3f6fb !important; }
+
+.tarjeta-institucional-oscura .texto-tarjeta-claro,
+.tarjeta-institucional-oscura .texto-tarjeta-claro * {
+  color: #f5f8fc !important;
+}
+
+@media (max-width: 700px) {
+  .portada-con-foto .portada-foto-layer { object-position: center; opacity: .27; }
+}
+
+/* El fondo fotográfico vive exclusivamente detrás de la sección El sistema. */
+.fondo-foto-sistema {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent !important;
+}
+.fondo-foto-sistema .portada-foto-layer {
+  position: absolute !important;
+  inset: 0;
+  z-index: -2 !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+  opacity: .30;
+  pointer-events: none;
+}
+.fondo-foto-sistema::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(9, 29, 49, .45), rgba(9, 29, 49, .72));
+  pointer-events: none;
+}
+.fondo-foto-sistema > *:not(.portada-foto-layer) {
+  position: relative;
+  z-index: 1;
+}
+.fondo-foto-sistema .seccion-titulo,
+.fondo-foto-sistema .seccion-descripcion,
+.fondo-foto-sistema > h1,
+.fondo-foto-sistema > h2,
+.fondo-foto-sistema > h3,
+.fondo-foto-sistema > p { color: #f8fbff !important; }
+
+/* Colores con contraste por sección; cada regla queda acotada a su tarjeta. */
+.seccion-mision { --color-titulo-seccion: #ffd16a; --color-cuerpo-seccion: #f5f8fc; }
+.seccion-vision { --color-titulo-seccion: #84e0d2; --color-cuerpo-seccion: #f5f8fc; }
+.seccion-valores { --color-titulo-seccion: #cbd8ff; --color-cuerpo-seccion: #f5f8fc; }
+.seccion-mision .seccion-titulo,
+.seccion-vision .seccion-titulo,
+.seccion-valores .seccion-titulo { color: var(--color-titulo-seccion) !important; }
+.seccion-mision .seccion-descripcion,
+.seccion-vision .seccion-descripcion,
+.seccion-valores .seccion-descripcion { color: var(--color-cuerpo-seccion) !important; }
+.titulo-mision { color: #ffd16a !important; }
+.descripcion-mision { color: #f5f8fc !important; }
+.titulo-vision { color: #84e0d2 !important; }
+.descripcion-vision { color: #f5f8fc !important; }
+.titulo-valores { color: #cbd8ff !important; }
+.descripcion-valores { color: #f5f8fc !important; }
+
+/* Sección independiente con la fotografía detrás del contenido "El sistema". */
+.seccion-fondo-campus {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 430px;
+  margin-block: clamp(28px, 5vw, 72px);
+  padding: clamp(38px, 6vw, 76px) clamp(20px, 4vw, 56px);
+  border-radius: 24px;
+  background: #0c2942;
+}
+.seccion-fondo-campus > .portada-foto-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+  opacity: .52;
+  pointer-events: none;
+}
+.seccion-fondo-campus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(7, 28, 48, .54), rgba(7, 28, 48, .78));
+  pointer-events: none;
+}
+.seccion-fondo-campus > .contenido-fondo-campus {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+}
+.contenido-fondo-campus > h1,
+.contenido-fondo-campus > h2,
+.contenido-fondo-campus > h3,
+.contenido-fondo-campus > p,
+.contenido-fondo-campus .seccion-titulo,
+.contenido-fondo-campus .seccion-descripcion { color: #f8fbff !important; }
+
+@media (max-width: 700px) {
+  .seccion-fondo-campus { min-height: 0; padding: 34px 18px; border-radius: 18px; }
+  .seccion-fondo-campus > .portada-foto-layer { opacity: .42; }
+}
+
+/* Corrección de contraste comprobada contra las capturas actuales. */
+.seccion-fondo-campus .contenido-fondo-campus h1,
+.seccion-fondo-campus .contenido-fondo-campus h2,
+.seccion-fondo-campus .contenido-fondo-campus h3,
+.seccion-fondo-campus .contenido-fondo-campus h4,
+.seccion-fondo-campus .contenido-fondo-campus p,
+.seccion-fondo-campus .contenido-fondo-campus .seccion-titulo,
+.seccion-fondo-campus .contenido-fondo-campus .seccion-descripcion {
+  color: #f8fbff !important;
+  text-shadow: 0 1px 3px rgba(4, 19, 34, .42);
+}
+.seccion-comunidad .seccion-titulo,
+.seccion-comunidad h1,
+.seccion-comunidad h2,
+.seccion-comunidad h3 { color: #10243d !important; }
+.seccion-comunidad .seccion-descripcion,
+.seccion-comunidad p { color: #40566e !important; }
+.seccion-comunidad .seccion-titulo,
+.seccion-comunidad h1,
+.seccion-comunidad h2,
+.seccion-comunidad h3 { color: #111827 !important; }
+.seccion-comunidad .seccion-descripcion,
+.seccion-comunidad > p { color: #111827 !important; }
+
+footer, .pie-colegio, .footer-colegio {
+  color: #e5edf6 !important;
+}
+footer p, footer small, footer span, footer li,
+footer .copyright, footer .texto-legal,
+.pie-colegio p, .pie-colegio small, .pie-colegio span,
+.footer-colegio p, .footer-colegio small, .footer-colegio span {
+  color: #c8d6e5 !important;
+}
+footer a, .pie-colegio a, .footer-colegio a { color: #f4f8fc !important; }
+footer h1, footer h2, footer h3, footer h4,
+.pie-colegio h1, .pie-colegio h2, .pie-colegio h3, .pie-colegio h4,
+.footer-colegio h1, .footer-colegio h2, .footer-colegio h3, .footer-colegio h4 {
+  color: #ffffff !important;
+}
+
+/* Franja fotográfica en la parte superior, justo debajo de la navegación. */
+.portada-fondo-campus {
+  position: relative;
+  isolation: isolate;
+  display: flow-root;
+  box-sizing: border-box;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(30px, 4vw, 54px) max(20px, calc((100vw - 1120px) / 2));
+  overflow: hidden;
+  background: #102b43;
+}
+.portada-fondo-campus > .portada-foto-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  opacity: .56;
+  pointer-events: none;
+}
+.portada-fondo-campus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(9, 31, 51, .20), rgba(9, 31, 51, .08), rgba(9, 31, 51, .22));
+  pointer-events: none;
+}
+.portada-fondo-campus > .portada-con-foto {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: min(100%, 1120px);
+  margin-inline: auto;
+  background-color: rgba(250, 252, 255, .82) !important;
+  backdrop-filter: blur(3px);
+}
+
+@media (max-width: 700px) {
+  /* En móvil, la portada utiliza todo el ancho disponible. */
+  .portada-fondo-campus { padding: 22px 14px; }
+  .portada-fondo-campus > .portada-foto-layer { opacity: .48; }
+  .portada-fondo-campus > .portada-con-foto { width: 100%; }
+}

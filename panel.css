@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef2f7;
+    color: #1f2937;
+}
+
+.panel {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* BARRA */
+
+.barra {
+    margin-top: 25px;
+    background: #111827;
+    color: white;
+    padding: 25px 30px;
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.barra h1 {
+    font-size: 25px;
+}
+
+.barra p {
+    margin-top: 5px;
+    color: #cbd5e1;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.usuario a {
+    background: #ef4444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.usuario a:hover {
+    background: #dc2626;
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+    margin: 35px 0 20px;
+}
+
+.bienvenida h2 {
+    font-size: 30px;
+}
+
+.bienvenida p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+/* ESTADÍSTICAS */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.estadistica {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.estadistica span {
+    font-size: 35px;
+}
+
+.estadistica h3 {
+    font-size: 25px;
+}
+
+.estadistica p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+/* BUSCADOR */
+
+.buscador {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.buscador h2 {
+    margin-bottom: 15px;
+}
+
+.buscador form {
+    display: flex;
+    gap: 10px;
+}
+
+.buscador input {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 9px;
+    font-size: 15px;
+}
+
+.buscador input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.buscador button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 0 25px;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buscador button:hover {
+    background: #1d4ed8;
+}
+
+/* LISTA */
+
+.lista {
+    background: transparent;
+}
+
+.titulo-lista {
+    margin-bottom: 15px;
+}
+
+.titulo-lista p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.estudiantes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ESTUDIANTE */
+
+.estudiante {
+    background: white;
+    padding: 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s;
+}
+
+.estudiante:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+/* AVATAR */
+
+.avatar {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* INFORMACIÓN */
+
+.informacion {
+    flex: 1;
+}
+
+.informacion h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.informacion p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.informacion .carrera {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* ACCIONES */
+
+.acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.acciones a {
+    padding: 10px 13px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.editar {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.editar:hover {
+    background: #bfdbfe;
+}
+
+.eliminar {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.eliminar:hover {
+    background: #fecaca;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: #6b7280;
+    padding: 35px;
+}
+
+/* CELULAR */
+
+@media (max-width: 750px) {
+
+    .barra {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador form {
+        flex-direction: column;
+    }
+
+    .buscador button {
+        padding: 13px;
+    }
+
+    .estudiante {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acciones {
+        width: 100%;
+    }
+
+    .acciones a {
+        flex: 1;
+        text-align: center;
+    }
+
+}

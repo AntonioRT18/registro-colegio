@@ -1,0 +1,16 @@
+# Credenciales locales: nunca subirlas a GitHub
+/config.local.php
+/.env
+/.env.*
+!/.env.example
+
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dependencias y artefactos locales
+/vendor/
+/node_modules/
+/storage/logs/

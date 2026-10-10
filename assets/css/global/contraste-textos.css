@@ -1,0 +1,17 @@
+/* Colores funcionales de contraste, editables de forma centralizada. */
+[data-contraste="sobre-claro"] {
+  color: #172b43 !important;
+}
+[data-contraste="sobre-oscuro"] {
+  color: #f8fbff !important;
+}
+
+/* Reglas del pie: conservar la marca y los textos claros. */
+footer *, .pie-colegio *, .footer-colegio * {
+  color: #eaf2fb !important;
+}
+footer h1, footer h2, footer h3, footer h4,
+.pie-colegio h1, .pie-colegio h2, .pie-colegio h3, .pie-colegio h4,
+.footer-colegio h1, .footer-colegio h2, .footer-colegio h3, .footer-colegio h4 {
+  color: #ffffff !important;
+}

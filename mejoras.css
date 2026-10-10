@@ -1,0 +1,344 @@
+:root {
+    --azul-profundo: #173b72;
+    --azul: #2563eb;
+    --turquesa: #0f9f9a;
+    --tinta: #18263b;
+    --texto-suave: #63738a;
+    --borde: #e4eaf2;
+    --fondo: #f3f7fc;
+    --sombra: 0 18px 45px rgba(29, 53, 87, .09);
+}
+
+body {
+    color: var(--tinta);
+    background:
+        radial-gradient(ellipse at 8% 0%, rgba(37, 99, 235, .13), transparent 34rem),
+        radial-gradient(ellipse at 92% 18%, rgba(15, 159, 154, .12), transparent 30rem),
+        #edf3fa;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.contenedor,
+.panel {
+    max-width: 1120px;
+}
+
+.encabezado,
+.barra {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: linear-gradient(120deg, #102b50 0%, #1e4e8c 52%, #087f8c 100%);
+    box-shadow: 0 22px 48px rgba(18, 55, 100, .25);
+}
+
+.encabezado {
+    min-height: 0;
+    display: block;
+    padding: clamp(26px, 4vw, 42px);
+    color: var(--tinta);
+    border: 1px solid #dce5ef;
+    border-left: 6px solid var(--turquesa);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 10px 28px rgba(29, 53, 87, .06);
+}
+
+.encabezado::after {
+    display: none;
+}
+
+.encabezado h1 {
+    margin-bottom: 8px;
+    color: var(--azul-profundo);
+    font-size: clamp(28px, 4vw, 38px);
+}
+
+.encabezado p {
+    color: var(--texto-suave);
+    opacity: 1;
+}
+
+.tarjeta {
+    padding: clamp(24px, 4vw, 38px);
+    border: 1px solid #dce5ef;
+    border-top: 0;
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(29, 53, 87, .08);
+}
+
+.tarjeta h2,
+.buscador h2,
+.titulo-lista h2 {
+    letter-spacing: -.025em;
+}
+
+.formulario {
+    gap: 22px 26px;
+}
+
+.formulario label,
+.campo label {
+    color: #35465d;
+    font-size: .94rem;
+}
+
+.formulario input,
+.campo input,
+.buscador input {
+    min-height: 50px;
+    border: 1px solid #d5dfeb;
+    border-radius: 10px;
+    padding: 13px 15px;
+    background: #f9fbfd;
+}
+
+.boton-principal {
+    width: auto;
+    min-width: 230px;
+    margin-top: 26px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    background: var(--azul-profundo);
+    box-shadow: 0 7px 16px rgba(23, 59, 114, .18);
+}
+
+.acceso-admin {
+    border-color: #dce5ef;
+    background: #f8fbff;
+    box-shadow: none;
+}
+
+.encabezado::after,
+.barra::after {
+    position: absolute;
+    top: -105px;
+    right: -45px;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 50%;
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, .045), 0 0 0 65px rgba(255, 255, 255, .035);
+    content: "";
+    pointer-events: none;
+}
+
+.encabezado h1,
+.barra h1 {
+    letter-spacing: -.035em;
+}
+
+.tarjeta,
+.acceso-admin,
+.buscador,
+.lista,
+.login-card {
+    border-top: 4px solid var(--turquesa);
+    padding: clamp(26px, 5vw, 42px);
+    border: 1px solid rgba(222, 231, 242, .9);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta,
+.login-card {
+    border-top: 4px solid var(--turquesa);
+}
+
+.tarjeta,
+.buscador,
+.lista,
+.login-card {
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.tarjeta:hover,
+.buscador:hover,
+.lista:hover,
+.login-card:hover {
+    box-shadow: 0 22px 55px rgba(29, 53, 87, .12);
+}
+
+input {
+    border: 1px solid var(--borde);
+    background: #fbfdff;
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+input:focus {
+    border-color: var(--azul);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
+}
+
+button,
+.boton-principal,
+.login-boton {
+    background: linear-gradient(110deg, var(--azul), #3478ed);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, .18);
+    transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+button:hover,
+.boton-principal:hover,
+.login-boton:hover {
+    box-shadow: 0 12px 24px rgba(37, 99, 235, .25);
+    filter: brightness(1.04);
+}
+
+a,
+button,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(15, 159, 154, .45);
+    outline-offset: 3px;
+}
+
+.estadistica {
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #fff, #f8fbff);
+    box-shadow: 0 8px 24px rgba(29, 53, 87, .06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.estadistica:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(29, 53, 87, .1);
+}
+
+.estudiante {
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(29, 53, 87, .045);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.estudiante:hover {
+    transform: translateY(-2px);
+    border-color: #c8d9f2;
+    box-shadow: 0 12px 26px rgba(29, 53, 87, .09);
+}
+
+.avatar {
+    background: linear-gradient(145deg, #dbeafe, #d9f4f1);
+    color: var(--azul-profundo);
+}
+
+.editar,
+.eliminar,
+.usuario a,
+.acceso-admin a,
+.volver {
+    transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.editar:hover,
+.eliminar:hover,
+.usuario a:hover,
+.acceso-admin a:hover,
+.volver:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.carrera {
+    color: var(--turquesa);
+}
+
+.error-login {
+    border-radius: 12px;
+}
+
+.estado-alumno {
+    display: inline-block;
+    width: fit-content;
+    margin: 2px 0 10px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.estado-activo {
+    background: #e7f6ef;
+    color: #176b46;
+}
+
+.estado-inactivo {
+    background: #fff1f0;
+    color: #a43c35;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-estado {
+    margin: 0;
+}
+
+.cambiar-estado {
+    padding: 9px 12px;
+    border: 1px solid #c9d7e7;
+    border-radius: 9px;
+    background: #f5f8fc;
+    color: #29435f;
+    font-size: .85rem;
+}
+
+/* Estilo principal del formulario público de registro */
+.tarjeta {
+    border: 1px solid #dce5ef;
+    border-top: 0;
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(29, 53, 87, .08);
+}
+
+.tarjeta form .boton-principal {
+    background: var(--azul-profundo);
+    box-shadow: 0 7px 16px rgba(23, 59, 114, .18);
+}
+
+@media (max-width: 700px) {
+    .encabezado,
+    .barra {
+        border-radius: 16px;
+    }
+
+    .tarjeta,
+    .buscador,
+    .lista,
+    .login-card {
+        border-radius: 16px;
+    }
+
+    .encabezado {
+        min-height: 0;
+    }
+
+    .boton-principal {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}

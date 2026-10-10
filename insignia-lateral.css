@@ -1,0 +1,52 @@
+.insignia-lateral {
+  position: fixed;
+  z-index: 1020;
+  top: 31vh;
+  left: clamp(16px, calc((100vw - 1120px) / 2 - 225px), 150px);
+  width: clamp(115px, 10vw, 160px);
+  height: auto;
+  padding: 10px;
+  border: 1px solid rgba(242, 212, 145, .75);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 213, 151, .22), rgba(14, 43, 67, .88) 70%);
+  box-shadow: 0 0 0 10px rgba(242, 212, 145, .06), 0 22px 50px rgba(0, 0, 0, .38);
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,.25));
+  animation: insignia-entrada .8s cubic-bezier(.2,.75,.25,1) both;
+}
+
+@media (max-width: 1100px) {
+  .insignia-lateral {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: block;
+    width: 120px;
+    margin: 0 auto 1rem;
+    animation: insignia-entrada .8s ease both;
+  }
+}
+
+.hero-dark-surface {
+  color: #111827 !important;
+  background: linear-gradient(135deg, #131212, #141414 70%, #2a2b2c) !important;
+  border: 1px solid rgba(177, 207, 231, .35) !important;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, .22) !important;
+}
+.hero-dark-surface :is(h1, h2, h3, h4, p, span, .eyebrow, .subtitle) { color: #010816 !important; }
+.hero-dark-surface .eyebrow { color: #087d81 !important; }
+.portada-texto-negro { color: #111827 !important; }
+.portada-kicker { color: #087d81 !important; font-weight: 800; letter-spacing: .14em; }
+.texto-fondo-oscuro { color: #020a16 !important; }
+.texto-fondo-oscuro:is(.section-kicker, .section-label, .eyebrow) { color: #79d6c2 !important; }
+.mision-card-destacada {
+  color: #070000 !important;
+  background: linear-gradient(145deg, #176f82, #10405d 82%) !important;
+  border: 1px solid rgba(247, 253, 253, 0.48) !important;
+  box-shadow: 0 18px 40px rgb(223, 225, 226) !important;
+}
+.mision-card-destacada :is(h1, h2, h3, h4, p, span, small, strong) { color: #fff !important; }
+
+@keyframes insignia-entrada {
+  from { opacity: 0; transform: translateX(-24px) scale(.8); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}

@@ -1,0 +1,74 @@
+/* Estilos finales de portada: se carga después de las hojas existentes. */
+html {
+  min-height: 100%;
+  background: #edf3f8 !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #edf3f8 !important;
+  background-image:
+    radial-gradient(ellipse at 7% 8%, rgba(38, 130, 180, .20), transparent 30%),
+    radial-gradient(ellipse at 93% 30%, rgba(44, 167, 148, .18), transparent 29%),
+    linear-gradient(145deg, #f7fafc 0%, #eaf1f7 54%, #f5f8fa 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Hero: admite los nombres de clase usados por las versiones de la portada. */
+:is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 390px;
+  padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 6vw, 5rem) !important;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 28px;
+  color: #fff !important;
+  background-color: #102b4b !important;
+  background-image:
+    url("insignia.svg"),
+    radial-gradient(ellipse at 75% 10%, rgba(42, 168, 153, .48), transparent 34%),
+    linear-gradient(118deg, #0b1d35 0%, #123c67 58%, #126e75 100%) !important;
+  background-repeat: no-repeat;
+  background-position: left clamp(1rem, 6vw, 5rem) center, center, center;
+  background-size: auto 94%, cover, cover;
+  box-shadow: 0 22px 55px rgba(13, 38, 63, .17);
+}
+
+:is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) :is(h1, h2, h3, p) {
+  color: #fff !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .18);
+}
+
+:is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) :is(h1, h2, h3, p, .btn, a.btn) {
+  margin-left: clamp(210px, 31vw, 340px);
+}
+
+:is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) :is(.btn, a.btn) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  :is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) {
+    min-height: 500px;
+    padding-bottom: 205px !important;
+    background-position: center bottom 12px, center, center;
+    background-size: auto 44%, cover, cover;
+  }
+
+  :is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) :is(h1, h2, h3, p, .btn, a.btn) {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(.hero, .hero-inicio, .hero-section, #inicio, main > section:first-child) {
+    animation: portada-aparece .8s ease-out both;
+  }
+}
+
+@keyframes portada-aparece {
+  from { opacity: .6; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

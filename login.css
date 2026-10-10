@@ -1,0 +1,183 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTENEDOR */
+
+.login-contenedor {
+    width: 90%;
+    max-width: 420px;
+}
+
+/* TARJETA */
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+}
+
+/* ICONO */
+
+.login-icono {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+}
+
+/* TITULO */
+
+.login-card h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.login-card .subtitulo {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+/* FORMULARIO */
+
+.campo {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+.campo input {
+    width: 100%;
+    padding: 14px;
+
+    border: 2px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.campo input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* BOTÓN */
+
+.login-boton {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-boton:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+/* ERROR */
+
+.error-login {
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+/* VOLVER */
+
+.volver {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.volver:hover {
+    text-decoration: underline;
+}
+
+/* CELULAR */
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+}
