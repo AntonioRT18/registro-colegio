@@ -25,7 +25,7 @@ require_once "conexion.php";
 <link rel="stylesheet" href="pie-colegio.css?v=1">
 <link rel="stylesheet" href="tema-claro.css?v=3">
 <link rel="stylesheet" href="assets/css/portada/portada-foto.css?v=6">
-<link rel="stylesheet" href="assets/css/portada/portada-ajustes.css?v=8">
+<link rel="stylesheet" href="assets/css/portada/portada-ajustes.css?v=10">
 <link rel="stylesheet" href="assets/css/global/contraste-textos.css?v=3">
 </head>
 

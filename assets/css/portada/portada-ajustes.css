@@ -48,6 +48,11 @@
 .seccion-valores .seccion-titulo { color: #c9d8ff !important; }
 .seccion-valores .seccion-descripcion { color: #f3f6fb !important; }
 
+/* La sección introductoria del colegio usa fondo claro: evita que las reglas
+   generales del tema oscuro aclaren demasiado su título y descripción. */
+h2#propuesta-titulo { color: #13263d !important; }
+h2#propuesta-titulo + p.colegio-lead { color: #40566e !important; }
+
 .tarjeta-institucional-oscura .texto-tarjeta-claro,
 .tarjeta-institucional-oscura .texto-tarjeta-claro * {
   color: #f5f8fc !important;
